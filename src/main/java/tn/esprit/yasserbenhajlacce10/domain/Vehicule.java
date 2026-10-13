@@ -44,20 +44,16 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
     private StatutVehicule statut;
 
-    // ÉTAPE 1 : côté propriétaire (porte la FK agence_id)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "agence_id")
     private Agence agence;
 
-    // ÉTAPE 2 : côté inverse
     @OneToMany(mappedBy = "vehicule")
     private List<Reservation> reservations = new ArrayList<>();
 
-    // ÉTAPE 5 : côté inverse, composition
     @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Maintenance> maintenances = new ArrayList<>();
 
-    // ÉTAPE 6 : côté propriétaire du ManyToMany
     @ManyToMany
     @JoinTable(
             name = "vehicule_equipement",

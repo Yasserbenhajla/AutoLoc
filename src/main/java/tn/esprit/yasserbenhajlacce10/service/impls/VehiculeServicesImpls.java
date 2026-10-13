@@ -14,7 +14,8 @@ import java.util.List;
 
 
 public class VehiculeServicesImpls implements IVehiculeServices {
-    private IVehiculeRepository vehiculeRepository ;
+    private final IVehiculeRepository vehiculeRepository ;
+
 
 
     @Override
