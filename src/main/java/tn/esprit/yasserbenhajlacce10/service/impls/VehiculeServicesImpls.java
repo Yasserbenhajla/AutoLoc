@@ -24,6 +24,7 @@ public class VehiculeServicesImpls implements IVehiculeServices {
         return vehiculeRepository.save(vehicule);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Vehicule findById(long id) {
         return vehiculeRepository.findById(id)

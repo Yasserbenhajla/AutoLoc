@@ -74,4 +74,15 @@ public class ContratRestController {
         contratServices.findById(id);
         contratServices.deleteById(id);
     }
+
+    @Operation(summary = "Ajouter un contrat avec ses paiements (cascade)")
+    @ApiResponses({
+            @ApiResponse(responseCode = "201", description = "Contrat et paiements créés"),
+            @ApiResponse(responseCode = "400", description = "Données invalides")
+    })
+    @PostMapping("/with-paiements")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Contrat addWithPaiements(@RequestBody Contrat contrat) {
+        return contratServices.addWithPaiements(contrat);
+    }
 }

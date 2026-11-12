@@ -1,4 +1,4 @@
-package tn.esprit.yasserbenhajlacce10.service.impls ;
+package tn.esprit.yasserbenhajlacce10.service.impls;
 
 import tn.esprit.yasserbenhajlacce10.domain.Contrat;
 
@@ -10,4 +10,6 @@ public interface IContratServices {
     List<Contrat> findAll();
     void deleteById(long id);
     Contrat update(Contrat contrat);
+
+    Contrat addWithPaiements(Contrat contrat);
 }
