@@ -1,5 +1,6 @@
 package tn.esprit.yasserbenhajlacce10.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,5 +26,8 @@ public class Equipement {
     private String libelle;
 
     // ÉTAPE 6 : côté inverse du ManyToMany
+    // @JsonIgnore évite la boucle JSON vehicule -> equipements -> vehicules -> ...
+    @JsonIgnore
     @ManyToMany(mappedBy = "equipements")
-    private Set<Vehicule> vehicules = new HashSet<>();}
+    private Set<Vehicule> vehicules = new HashSet<>();
+}

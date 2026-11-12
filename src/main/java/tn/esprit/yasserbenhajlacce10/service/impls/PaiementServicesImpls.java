@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.yasserbenhajlacce10.domain.Paiement;
 import tn.esprit.yasserbenhajlacce10.repository.IPaiementRepository;
-import tn.esprit.yasserbenhajlacce10.service.IPaiementServices;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.yasserbenhajlacce10.domain.Contrat;
 import tn.esprit.yasserbenhajlacce10.repository.IContratRepository;
-import tn.esprit.yasserbenhajlacce10.service.IContratServices;
+
 
 import java.util.List;
 
